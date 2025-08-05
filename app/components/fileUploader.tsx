@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
-import { formatSize } from '../lib/utils'
+import { formatSize } from '~/lib/utils'
 
 interface FileUploaderProps {
     onFileSelect?: (file: File | null) => void;
@@ -14,7 +14,7 @@ const FileUploader = ({onFileSelect}: FileUploaderProps) => {
         setSelectedFile(file);
         onFileSelect?.(file);
     }, [onFileSelect])
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({
+    const {getRootProps, getInputProps} = useDropzone({
         onDrop,
         multiple: false,
         accept:{'application/pdf':['.pdf']},
@@ -27,6 +27,7 @@ const FileUploader = ({onFileSelect}: FileUploaderProps) => {
                 <div className="space-y-4 cursor-pointer">
 
                     {selectedFile ? (
+
                         <div className="uploader-selected-file "onClick={(e)=>e.stopPropagation()}>
                             <div className="flex items-center space-x-3">
                                 <img src="/images/pdf.png" alt="pdf" className="size-10"/>
