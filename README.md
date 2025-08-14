@@ -1,4 +1,4 @@
-# 💼 AI-Powered Resume Analyzer
+# 💼 JobMatch Pro
 
 ![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)
 ![Puter.js](https://img.shields.io/badge/Puter.js-Local%20FS%20Backend-orange)
